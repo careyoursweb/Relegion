@@ -1,97 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bhagwat Quotes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: sans-serif;
-      background: #f5f3e7;
-      color: #333;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #fff5d7, #fce8b0);
+      font-family: 'Tiro Devanagari Sanskrit', serif;
+      color: #3b2f1c;
       text-align: center;
-      padding: 20px;
+    }
+    header {
+      background: #d4a373;
+      color: white;
+      padding: 20px 10px;
+      font-size: 1.8em;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .om-symbol {
+      font-size: 2.2em;
     }
     .quote-box {
-      border: 2px solid #d4a373;
-      padding: 20px;
+      background: #fffbe6;
+      margin: 30px auto;
+      padding: 25px;
+      max-width: 90%;
+      border: 2px solid #caa969;
       border-radius: 12px;
-      background: #fff8ea;
-      margin: 20px auto;
-      max-width: 500px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 12px rgba(0,0,0,0.1);
     }
     .sanskrit {
-      font-size: 1.4em;
-      color: #6b4c35;
-      font-style: italic;
+      font-size: 1.6em;
+      color: #5d2e00;
+      margin-bottom: 10px;
+      line-height: 1.6;
     }
     .english {
+      font-size: 1.2em;
       margin-top: 10px;
-      font-size: 1.1em;
+      color: #3c2c15;
     }
     .source {
-      margin-top: 10px;
-      font-size: 0.9em;
-      color: #777;
+      margin-top: 12px;
+      font-size: 0.95em;
+      color: #6b4c2b;
     }
-    button {
-      margin-top: 20px;
-      padding: 10px 16px;
-      font-size: 1em;
-      background: #d4a373;
-      border: none;
-      border-radius: 8px;
-      color: white;
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #a57743;
     }
   </style>
 </head>
 <body>
-
-  <h1>🕉️ Bhagwat Quotes</h1>
-
-  <div class="quote-box" id="quoteBox">
-    <div class="sanskrit" id="sanskritQuote"></div>
+  <header>
+    <div class="om-symbol">🕉️</div>
+    Bhagwat Quotes
+  </header>  <div class="quote-box" id="quoteBox">
+    <div class="sanskrit" id="sanskritQuote">📿 Loading...</div>
     <div class="english" id="englishQuote"></div>
     <div class="source" id="quoteSource"></div>
-  </div>
-
-  <button onclick="showRandomQuote()">🔁 Show Another Quote</button>
-
-  <script>
+  </div>  <footer>
+    🕉️ A new divine message, every day.
+  </footer>  <script>
     const quotes = [
-      {
-        sanskrit: "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।",
-        english: "You have a right to perform your duties, but never to the fruits of your actions.",
-        source: "Bhagavad Gita 2.47"
-      },
-      {
-        sanskrit: "न जायते म्रियते वा कदाचित्।",
-        english: "The soul is neither born, nor does it ever die.",
-        source: "Bhagavad Gita 2.20"
-      },
-      {
-        sanskrit: "अहिंसा परमो धर्मः।",
-        english: "Non-violence is the highest duty.",
-        source: "Mahabharata 18.116.37"
-      },
-      {
-        sanskrit: "विद्या ददाति विनयं।",
-        english: "Knowledge gives humility.",
-        source: "Hitopadesha"
-      }
+      {sanskrit: "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।", english: "You have a right to perform your duties, but never to the fruits of your actions.", source: "Bhagavad Gita 2.47"},
+      {sanskrit: "न जायते म्रियते वा कदाचित्।", english: "The soul is neither born, nor does it ever die.", source: "Bhagavad Gita 2.20"},
+      {sanskrit: "अहिंसा परमो धर्मः।", english: "Non-violence is the highest duty.", source: "Mahabharata 18.116.37"},
+      {sanskrit: "विद्या ददाति विनयं।", english: "Knowledge gives humility.", source: "Hitopadesha"},
+      {sanskrit: "सत्यमेव जयते नानृतं।", english: "Truth alone triumphs, not falsehood.", source: "Mundaka Upanishad 3.1.6"},
+      {sanskrit: "मन एव मनुष्याणां कारणं बन्धमोक्षयोः।", english: "The mind alone is the cause of bondage or liberation.", source: "Amritabindu Upanishad"},
+      {sanskrit: "श्रेयान् स्वधर्मो विगुणः परधर्मात् स्वनुष्ठितात्।", english: "Better to perform one's own duty imperfectly than another's perfectly.", source: "Bhagavad Gita 3.35"},
     ];
 
-    function showRandomQuote() {
-      const random = quotes[Math.floor(Math.random() * quotes.length)];
-      document.getElementById("sanskritQuote").innerText = random.sanskrit;
-      document.getElementById("englishQuote").innerText = random.english;
-      document.getElementById("quoteSource").innerText = "📖 " + random.source;
+    while (quotes.length < 356) {
+      quotes.push(quotes[quotes.length % 7]);
     }
 
-    // Show quote on page load
-    showRandomQuote();
-  </script>
+    const today = new Date();
+    const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
+    const quote = quotes[dayOfYear % quotes.length];
 
-</body>
+    document.getElementById("sanskritQuote").innerText = quote.sanskrit;
+    document.getElementById("englishQuote").innerText = quote.english;
+    document.getElementById("quoteSource").innerText = "📖 " + quote.source;
+  </script></body>
 </html>
