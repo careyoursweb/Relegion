@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhagwat Quotes</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f5f3e7;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+    .quote-box {
+      border: 2px solid #d4a373;
+      padding: 20px;
+      border-radius: 12px;
+      background: #fff8ea;
+      margin: 20px auto;
+      max-width: 500px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .sanskrit {
+      font-size: 1.4em;
+      color: #6b4c35;
+      font-style: italic;
+    }
+    .english {
+      margin-top: 10px;
+      font-size: 1.1em;
+    }
+    .source {
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #777;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 16px;
+      font-size: 1em;
+      background: #d4a373;
+      border: none;
+      border-radius: 8px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🕉️ Bhagwat Quotes</h1>
+
+  <div class="quote-box" id="quoteBox">
+    <div class="sanskrit" id="sanskritQuote"></div>
+    <div class="english" id="englishQuote"></div>
+    <div class="source" id="quoteSource"></div>
+  </div>
+
+  <button onclick="showRandomQuote()">🔁 Show Another Quote</button>
+
+  <script>
+    const quotes = [
+      {
+        sanskrit: "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।",
+        english: "You have a right to perform your duties, but never to the fruits of your actions.",
+        source: "Bhagavad Gita 2.47"
+      },
+      {
+        sanskrit: "न जायते म्रियते वा कदाचित्।",
+        english: "The soul is neither born, nor does it ever die.",
+        source: "Bhagavad Gita 2.20"
+      },
+      {
+        sanskrit: "अहिंसा परमो धर्मः।",
+        english: "Non-violence is the highest duty.",
+        source: "Mahabharata 18.116.37"
+      },
+      {
+        sanskrit: "विद्या ददाति विनयं।",
+        english: "Knowledge gives humility.",
+        source: "Hitopadesha"
+      }
+    ];
+
+    function showRandomQuote() {
+      const random = quotes[Math.floor(Math.random() * quotes.length)];
+      document.getElementById("sanskritQuote").innerText = random.sanskrit;
+      document.getElementById("englishQuote").innerText = random.english;
+      document.getElementById("quoteSource").innerText = "📖 " + random.source;
+    }
+
+    // Show quote on page load
+    showRandomQuote();
+  </script>
+
+</body>
+</html>
